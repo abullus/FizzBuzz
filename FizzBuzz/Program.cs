@@ -10,7 +10,6 @@ namespace FizzBuzz
             for (int i = 0; i < MaxCount; i++)
             {
                 var flag = true;
-                var output = "";
                 if (i % 3 == 0)
                 {
                     Console.Write("Fizz");
