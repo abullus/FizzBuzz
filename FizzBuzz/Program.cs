@@ -21,11 +21,6 @@ namespace FizzBuzz
                     Console.Write("Buzz");
                     flag = false;
                 }
-                
-                
-                
-                
-                
                 if (flag)
                 {
                     Console.Write(i);
