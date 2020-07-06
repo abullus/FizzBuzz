@@ -9,22 +9,24 @@ namespace FizzBuzz
             int MaxCount = 100;
             for (int i = 0; i < MaxCount; i++)
             {
-                var flag = true;
+                var displayOutput = "";
+                var outputInteger = true;
                 if (i % 3 == 0)
                 {
-                    Console.Write("Fizz");
-                    flag = false;
+                    displayOutput = displayOutput + "Fizz";
+                    outputInteger = false;
                 }
                 if (i % 5 == 0)
                 {
-                    Console.Write("Buzz");
-                    flag = false;
+                    displayOutput = displayOutput + "Buzz";
+                    outputInteger = false;
                 }
-                if (flag)
+
+                if (outputInteger)
                 {
-                    Console.Write(i);
+                    displayOutput = $"{i}";
                 }
-                Console.Write("\n");
+                Console.Write("\n" + displayOutput);
             }
         }
     }
