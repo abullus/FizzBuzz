@@ -32,14 +32,7 @@ namespace FizzBuzz
                 }
                 if (i % 13 == 0)
                 {
-                    if (output.IndexOf("Fizz") == -1)
-                    {
-                        output.Insert(0,"Fezz");
-                    }
-                    else
-                    {
-                        output.Insert(1,"Fezz");
-                    }
+                    output.Insert(output.IndexOf("Fizz") == -1 ? 0 : 1, "Fezz");
                 }
                 
                 if (i % 17 == 0)
