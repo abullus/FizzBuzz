@@ -6,8 +6,8 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            int MaxCount = 100;
-            for (int i = 0; i < MaxCount; i++)
+            int MaxCount = 115;
+            for (int i = 1; i <= MaxCount; i++)
             {
                 var displayOutput = "";
                 var outputInteger = true;
@@ -21,7 +21,11 @@ namespace FizzBuzz
                     displayOutput = displayOutput + "Buzz";
                     outputInteger = false;
                 }
-
+                if (i % 7 == 0)
+                {
+                    displayOutput = displayOutput + "Bang";
+                    outputInteger = false;
+                }
                 if (outputInteger)
                 {
                     displayOutput = $"{i}";
