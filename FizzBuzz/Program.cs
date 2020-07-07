@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace FizzBuzz
 {
@@ -7,30 +9,55 @@ namespace FizzBuzz
         static void Main(string[] args)
         {
             int MaxCount = 115;
+            List<string> output = new List<string>();
             for (int i = 1; i <= MaxCount; i++)
             {
-                var displayOutput = "";
-                var outputInteger = true;
+                output.Clear();
                 if (i % 3 == 0)
                 {
-                    displayOutput = displayOutput + "Fizz";
-                    outputInteger = false;
+                    output.Add("Fizz");
                 }
                 if (i % 5 == 0)
                 {
-                    displayOutput = displayOutput + "Buzz";
-                    outputInteger = false;
+                    output.Add("Buzz");
                 }
                 if (i % 7 == 0)
                 {
-                    displayOutput = displayOutput + "Bang";
-                    outputInteger = false;
+                    output.Add("Bang");
                 }
-                if (outputInteger)
+                if (i % 11 == 0)
                 {
-                    displayOutput = $"{i}";
+                    output.Clear();
+                    output.Add("Bong");
                 }
-                Console.Write("\n" + displayOutput);
+                if (i % 13 == 0)
+                {
+                    if (output.IndexOf("Fizz") == -1)
+                    {
+                        output.Insert(0,"Fezz");
+                    }
+                    else
+                    {
+                        output.Insert(1,"Fezz");
+                    }
+                }
+                
+                if (i % 17 == 0)
+                {
+                    output.Reverse();
+                }
+                
+                if (!output.Any())
+                {
+                    output.Add($"{i}");
+                }
+
+                foreach (var displayOutput in output)
+                {
+                    Console.Write(displayOutput);
+                }
+
+                Console.Write("\n");
             }
         }
     }
